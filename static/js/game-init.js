@@ -186,24 +186,38 @@ async function init() {
   try {
     let data;
     const dataUrl = 'data.json';
-    
-    // Parent window cache check to avoid re-fetching 2MB data.json on React re-renders/remounts
-    let parentWin = window;
+    let cachedData = null;
+
+    // Try reading from parent window cache (same-origin check)
     try {
-      if (window.parent && window.parent !== window) {
-        parentWin = window.parent;
+      if (window.parent && window.parent !== window && window.parent.dataGeniallyOfflineCache) {
+        cachedData = window.parent.dataGeniallyOfflineCache;
       }
     } catch (e) {
-      // Cross-origin iframe parent access blocked, fallback to local window
+      // Cross-origin iframe parent access blocked, fallback to local window cache
     }
 
-    if (parentWin.dataGeniallyOfflineCache) {
+    // Try reading from local window cache
+    if (!cachedData && window.dataGeniallyOfflineCache) {
+      cachedData = window.dataGeniallyOfflineCache;
+    }
+
+    if (cachedData) {
       console.log('Using cached game data from memory...');
-      data = parentWin.dataGeniallyOfflineCache;
+      data = cachedData;
     } else {
       const res = await fetch(dataUrl);
       data = await res.json();
-      parentWin.dataGeniallyOfflineCache = data;
+      
+      // Try saving to parent window cache
+      try {
+        if (window.parent && window.parent !== window) {
+          window.parent.dataGeniallyOfflineCache = data;
+        }
+      } catch (e) {
+        // Cross-origin access blocked, ignore
+      }
+      window.dataGeniallyOfflineCache = data;
     }
 
     applyGameObjectMapping(data, window.gameObject);
