@@ -184,10 +184,27 @@ function applyGameObjectMapping(data, gameObject) {
 async function init() {
   console.log('Loading base game data...');
   try {
-    // data.json her zaman relative olarak çekilir (base tag sayesinde github pages'ı hedefler)
+    let data;
     const dataUrl = 'data.json';
-    const res = await fetch(dataUrl);
-    const data = await res.json();
+    
+    // Parent window cache check to avoid re-fetching 2MB data.json on React re-renders/remounts
+    let parentWin = window;
+    try {
+      if (window.parent && window.parent !== window) {
+        parentWin = window.parent;
+      }
+    } catch (e) {
+      // Cross-origin iframe parent access blocked, fallback to local window
+    }
+
+    if (parentWin.dataGeniallyOfflineCache) {
+      console.log('Using cached game data from memory...');
+      data = parentWin.dataGeniallyOfflineCache;
+    } else {
+      const res = await fetch(dataUrl);
+      data = await res.json();
+      parentWin.dataGeniallyOfflineCache = data;
+    }
 
     applyGameObjectMapping(data, window.gameObject);
     window.dataGeniallyOffline = data;
