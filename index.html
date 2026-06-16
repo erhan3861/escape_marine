@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="light only">
+    <meta name="robots" content="noindex, nofollow, noimageindex">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <base href="https://erhan3861.github.io/escape_marine/">
+
+    <link href="css/gf_SchibstedGrotesk.css" rel="stylesheet">
+    <link href="css/view.0.0.87.css" rel="stylesheet">
+    <title>Submarine Escape Game</title>
+    <link href="css/main.105fc96e.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/gf_Viga.css" media="all">
+    <link rel="stylesheet" href="css/gf_Barriecito.css" media="all">
+    <link rel="stylesheet" href="css/gf_Sora.css" media="all">
+    <link rel="stylesheet" href="css/gf_SourceSansPro.css" media="all">
+    <link rel="stylesheet" href="css/gf_SchibstedGrotesk.css" media="all">
+    <link rel="stylesheet" href="css/gf_OpenSans.css" media="all">
+    <link rel="stylesheet" href="css/gf_Inter.css" media="all">
+    <link rel="stylesheet" href="css/gf_DMSans.css" media="all">
+    <style>
+        body,
+        html {
+            padding: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="static/js/offline.js" type="text/javascript"></script>
+
+    <!-- ========================================== -->
+    <!-- AI PLACEHOLDER GAME CONTENT (window.gameObject) -->
+    <!-- ========================================== -->
+    <script>
+        window.gameObject = {
+            // --- GİRİŞ / HOŞ GELDİNİZ EKRANI (WELCOME SCREEN) ---
+            "WELCOME_HEADER": "<<<WELCOME_HEADER>>>",
+            "WELCOME_TITLE": "<<<WELCOME_TITLE>>>",
+            "WELCOME_START_BTN": "<<<WELCOME_START_BTN>>>",
+
+            // --- HİKAYE GİRİŞ EKRANI (INTRODUCTION SLIDE) ---
+            "INTRO_HEADER": "<<<INTRO_HEADER>>>",
+            "INTRO_TEXT": "<<<INTRO_TEXT>>>",
+
+            // --- BÖLÜM MENÜLERİ (LEVEL MENU SCREENS) ---
+            "LEVEL_1_NAME": "<<<LEVEL_1_NAME>>>",
+            "LEVEL_2_NAME": "<<<LEVEL_2_NAME>>>",
+            "LEVEL_3_NAME": "<<<LEVEL_3_NAME>>>",
+            "LEVEL_4_NAME": "<<<LEVEL_4_NAME>>>",
+            "LEVEL_5_NAME": "<<<LEVEL_5_NAME>>>",
+
+            // --- BÖLÜM 1: KAYALIK VADİ (STAGE 1: ROCKY VALLEY) ---
+            "STAGE_1_TITLE": "<<<STAGE_1_TITLE>>>",
+            "STAGE_1_DESC": "<<<STAGE_1_DESC>>>",
+
+            // --- AKTİVİTELER (INTERACTIVE QUIZ QUESTIONS & ANSWERS) ---
+            // Soru 1 (True/False - Whales)
+            "QUESTION_1": {
+                "text": "<<<QUESTION_1_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_1_A>>>", "isCorrect": true },
+                    { "text": "<<<QUESTION_1_B>>>", "isCorrect": false }
+                ]
+            },
+
+            // Soru 2 (Quiz - Which animal has a shell)
+            "QUESTION_2": {
+                "text": "<<<QUESTION_2_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_2_A>>>", "isCorrect": true },
+                    { "text": "<<<QUESTION_2_B>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_2_C>>>", "isCorrect": false }
+                ]
+            },
+
+            // Soru 3 (Quiz - Which of these are fish)
+            "QUESTION_3": {
+                "text": "<<<QUESTION_3_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_3_A>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_3_B>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_3_C>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_3_D>>>", "isCorrect": true }
+                ]
+            },
+
+            // Soru 4 (Quiz - Which has tentacles)
+            "QUESTION_4": {
+                "text": "<<<QUESTION_4_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_4_A>>>", "isCorrect": true },
+                    { "text": "<<<QUESTION_4_B>>>", "isCorrect": false }
+                ]
+            },
+
+            // Soru 5 (Flashlight function in underwater cave)
+            "QUESTION_5": {
+                "text": "<<<QUESTION_5_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_5_A>>>", "isCorrect": true },
+                    { "text": "<<<QUESTION_5_B>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_5_C>>>", "isCorrect": false }
+                ]
+            },
+
+            // Soru 6 (Equipment for exploring cave)
+            "QUESTION_6": {
+                "text": "<<<QUESTION_6_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_6_A>>>", "isCorrect": true },
+                    { "text": "<<<QUESTION_6_B>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_6_C>>>", "isCorrect": false }
+                ]
+            },
+
+            // Soru 7 (Natural habitat of eels)
+            "QUESTION_7": {
+                "text": "<<<QUESTION_7_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_7_A>>>", "isCorrect": true },
+                    { "text": "<<<QUESTION_7_B>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_7_C>>>", "isCorrect": false }
+                ]
+            },
+
+            // Soru 8 (Superpower Classification: Imagining)
+            "QUESTION_8": {
+                "text": "<<<QUESTION_8_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_8_A>>>", "isCorrect": true },
+                    { "text": "<<<QUESTION_8_B>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_8_C>>>", "isCorrect": false }
+                ]
+            },
+
+            // Soru 9 (Superpower Classification: Giant Memory)
+            "QUESTION_9": {
+                "text": "<<<QUESTION_9_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_9_A>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_9_B>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_9_C>>>", "isCorrect": true }
+                ]
+            },
+
+            // Soru 10 (Superpower Classification: Co-creation)
+            "QUESTION_10": {
+                "text": "<<<QUESTION_10_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_10_A>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_10_B>>>", "isCorrect": true },
+                    { "text": "<<<QUESTION_10_C>>>", "isCorrect": false }
+                ]
+            },
+
+            // Soru 11 (Superpower Classification: Empathy & Love)
+            "QUESTION_11": {
+                "text": "<<<QUESTION_11_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_11_A>>>", "isCorrect": true },
+                    { "text": "<<<QUESTION_11_B>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_11_C>>>", "isCorrect": false }
+                ]
+            },
+
+            // Soru 12 (Superpower Classification: Super Processing Speed)
+            "QUESTION_12": {
+                "text": "<<<QUESTION_12_TEXT>>>",
+                "answers": [
+                    { "text": "<<<QUESTION_12_A>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_12_B>>>", "isCorrect": false },
+                    { "text": "<<<QUESTION_12_C>>>", "isCorrect": true }
+                ]
+            },
+
+            // --- OYUN İÇİ DİĞER GÖRSEL METİNLER (IMAGE-BASED QUESTIONS) ---
+            // Soru 1 (Yengeç görsel sorusu)
+            "IMAGE_Q1_HEADER": "<<<IMAGE_Q1_HEADER>>>",
+            "IMAGE_Q1_BODY": "<<<IMAGE_Q1_BODY>>>",
+            "IMAGE_Q1_CHOICE_A": "<<<IMAGE_Q1_CHOICE_A>>>",
+            "IMAGE_Q1_CHOICE_B": "<<<IMAGE_Q1_CHOICE_B>>>",
+            "IMAGE_Q1_CHOICE_C": "<<<IMAGE_Q1_CHOICE_C>>>",
+            "IMAGE_Q1_CHOICE_D": "<<<IMAGE_Q1_CHOICE_D>>>",
+            "IMAGE_Q1_CHOICE_E": "<<<IMAGE_Q1_CHOICE_E>>>",
+            "IMAGE_Q1_DRAG_TEXT": "<<<IMAGE_Q1_DRAG_TEXT>>>",
+
+            // Soru 2 (Mavi balina görsel sorusu)
+            "IMAGE_Q2_HEADER": "<<<IMAGE_Q2_HEADER>>>",
+            "IMAGE_Q2_BODY": "<<<IMAGE_Q2_BODY>>>",
+            "IMAGE_Q2_CHOICE_A": "<<<IMAGE_Q2_CHOICE_A>>>",
+            "IMAGE_Q2_CHOICE_B": "<<<IMAGE_Q2_CHOICE_B>>>",
+            "IMAGE_Q2_CHOICE_C": "<<<IMAGE_Q2_CHOICE_C>>>",
+            "IMAGE_Q2_CHOICE_D": "<<<IMAGE_Q2_CHOICE_D>>>",
+            "IMAGE_Q2_CHOICE_E": "<<<IMAGE_Q2_CHOICE_E>>>",
+
+            // Soru 3 (Okyanuslardaki bol madde görsel sorusu)
+            "IMAGE_Q3_HEADER": "<<<IMAGE_Q3_HEADER>>>",
+            "IMAGE_Q3_BODY": "<<<IMAGE_Q3_BODY>>>",
+            "IMAGE_Q3_CHOICE_A": "<<<IMAGE_Q3_CHOICE_A>>>",
+            "IMAGE_Q3_CHOICE_B": "<<<IMAGE_Q3_CHOICE_B>>>",
+            "IMAGE_Q3_CHOICE_C": "<<<IMAGE_Q3_CHOICE_C>>>",
+            "IMAGE_Q3_CHOICE_D": "<<<IMAGE_Q3_CHOICE_D>>>",
+            "IMAGE_Q3_CHOICE_E": "<<<IMAGE_Q3_CHOICE_E>>>",
+
+            // Soru 4 (En büyük okyanus görsel sorusu)
+            "IMAGE_Q4_HEADER": "<<<IMAGE_Q4_HEADER>>>",
+            "IMAGE_Q4_BODY": "<<<IMAGE_Q4_BODY>>>",
+            "IMAGE_Q4_CHOICE_A": "<<<IMAGE_Q4_CHOICE_A>>>",
+            "IMAGE_Q4_CHOICE_B": "<<<IMAGE_Q4_CHOICE_B>>>",
+            "IMAGE_Q4_CHOICE_C": "<<<IMAGE_Q4_CHOICE_C>>>",
+            "IMAGE_Q4_CHOICE_D": "<<<IMAGE_Q4_CHOICE_D>>>",
+            "IMAGE_Q4_CHOICE_E": "<<<IMAGE_Q4_CHOICE_E>>>",
+
+            // --- BÖLÜM 2: YOSUN BARİYERİ (STAGE 2: LUSH BARRIER) ---
+            "STAGE_2_TITLE": "<<<STAGE_2_TITLE>>>",
+            "STAGE_2_DESC": "<<<STAGE_2_DESC>>>",
+
+            // Soru 5 (Resimli palyaço balığı sorusu)
+            "IMAGE_Q5_HEADER": "<<<IMAGE_Q5_HEADER>>>",
+            "IMAGE_Q5_BODY": "<<<IMAGE_Q5_BODY>>>",
+
+            // Soru 6 (Resimli yengeç sorusu)
+            "IMAGE_Q6_HEADER": "<<<IMAGE_Q6_HEADER>>>",
+            "IMAGE_Q6_BODY": "<<<IMAGE_Q6_BODY>>>",
+
+            // Soru 7 (Resimli deniz kabuğu sorusu)
+            "IMAGE_Q7_HEADER": "<<<IMAGE_Q7_HEADER>>>",
+            "IMAGE_Q7_BODY": "<<<IMAGE_Q7_BODY>>>",
+
+            // Soru 8 (Resimli deniz atı sorusu)
+            "IMAGE_Q8_HEADER": "<<<IMAGE_Q8_HEADER>>>",
+            "IMAGE_Q8_BODY": "<<<IMAGE_Q8_BODY>>>",
+
+            // --- BÖLÜM 3: ÇOK YOLLU MAĞARA (STAGE 3: MULTI-PATH CAVE) ---
+            "STAGE_3_TITLE": "<<<STAGE_3_TITLE>>>",
+            "STAGE_3_DESC": "<<<STAGE_3_DESC>>>",
+
+            // --- BÖLÜM 4: KARANLIK UÇURUM (STAGE 4: DARK ABYSS) ---
+            "STAGE_4_TITLE": "<<<STAGE_4_TITLE>>>",
+            "STAGE_4_DESC": "<<<STAGE_4_DESC>>>",
+
+            // Sürükle Eşleştirme 1
+            "MATCH_1_HEADER": "<<<MATCH_1_HEADER>>>",
+            "STAGE_5_TITLE": "<<<STAGE_5_TITLE>>>",
+            "STAGE_5_DESC": "<<<STAGE_5_DESC>>>",
+            "MATCH_2_HEADER": "<<<MATCH_2_HEADER>>>",
+            "MATCH_2_ITEM_1": "<<<MATCH_2_ITEM_1>>>",
+            "MATCH_2_ITEM_2": "<<<MATCH_2_ITEM_2>>>",
+            "MATCH_2_ITEM_3": "<<<MATCH_2_ITEM_3>>>",
+
+            // Sürükle Eşleştirme 2
+            "MATCH_3_ITEM_1": "<<<MATCH_3_ITEM_1>>>",
+            "MATCH_3_ITEM_2": "<<<MATCH_3_ITEM_2>>>",
+            "MATCH_3_ITEM_3": "<<<MATCH_3_ITEM_3>>>",
+
+            // --- SON EKRANLAR (FINALE SCREENS) ---
+            "FINALE_STORY_1": "<<<FINALE_STORY_1>>>",
+            "FINALE_CHOOSE_CHEST": "<<<FINALE_CHOOSE_CHEST>>>",
+
+            // Sandık Sonu 1
+            "CHEST_1_TEXT": "<<<CHEST_1_TEXT>>>",
+            "CHEST_1_TITLE": "<<<CHEST_1_TITLE>>>",
+
+            // Sandık Sonu 2
+            "CHEST_2_TEXT": "<<<CHEST_2_TEXT>>>",
+
+            // Sandık Sonu 3
+            "CHEST_3_TEXT": "<<<CHEST_3_TEXT>>>",
+            "CHEST_3_TITLE": "<<<CHEST_3_TITLE>>>"
+        };
+    </script>
+
+    <!-- ========================================== -->
+    <!-- EXTERNAL ENGINE SCRIPTS                   -->
+    <!-- ========================================== -->
+    <script src="static/js/media-preloads.js"></script>
+    <script src="static/js/game-engine-utils.js"></script>
+    <script src="static/js/game-init.js"></script>
+
+
+    <input type="hidden" id="offline-6a1d323253aa85d97924e633" value="true">
+    <div class="iframe-container">
+        <div class="container-wrapper-genially" style="position: relative; min-height: 400px; width: 100%;"><video
+                class="loader-genially" autoplay="" loop="" playsinline="playsInline" muted=""
+                style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 120px;height: 120px;margin-bottom: 10%">
+                <source src="videos/loader-edu.mp4" type="video/mp4">Your browser does not support the video tag.
+            </video>
+            <div id="6a1d323253aa85d97924e633" class="genially-embed"
+                style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
