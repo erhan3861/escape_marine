@@ -14,18 +14,31 @@
  * Diziler media-preloads.js tarafından tanımlanmış olmalıdır.
  */
 function preloadMedia() {
-  console.log('Starting media preloading...');
-  if (typeof audioPreloads !== 'undefined') {
-    audioPreloads.forEach(src => {
-      const a = new Audio();
-      a.src = src;
-    });
-  }
-  if (typeof imagePreloads !== 'undefined') {
-    imagePreloads.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
+  console.log('Starting media preloading in background...');
+  
+  const loadAssets = () => {
+    if (typeof audioPreloads !== 'undefined') {
+      audioPreloads.forEach((src, index) => {
+        setTimeout(() => {
+          const a = new Audio();
+          a.src = src;
+        }, index * 50); // Stagger audio requests by 50ms
+      });
+    }
+    if (typeof imagePreloads !== 'undefined') {
+      imagePreloads.forEach((src, index) => {
+        setTimeout(() => {
+          const img = new Image();
+          img.src = src;
+        }, index * 20); // Stagger image requests by 20ms
+      });
+    }
+  };
+
+  if (typeof window.requestIdleCallback !== 'undefined') {
+    window.requestIdleCallback(loadAssets);
+  } else {
+    setTimeout(loadAssets, 500);
   }
 }
 

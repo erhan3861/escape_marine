@@ -192,12 +192,12 @@ async function init() {
     applyGameObjectMapping(data, window.gameObject);
     window.dataGeniallyOffline = data;
 
-    preloadMedia();
-
     console.log('Initializing player engine...');
     // Scriptler relative yüklenir (base tag'e göre çözümlenir)
     await loadScript('static/js/offline-runtime.5c6b7cc8.js');
     await loadScript('static/js/main.7e2d9301.js');
+
+    preloadMedia();
 
     console.log('Initialization complete. Submarine Escape Game Ready!');
   } catch (err) {
