@@ -5,11 +5,6 @@
  * fonksiyonlarını içerir. Soru içeriğinden tamamen
  * bağımsızdır; farklı oyun şablonlarında yeniden
  * kullanılabilir.
- *
- * Dışa açılan fonksiyonlar (window'a bağlanır):
- *   - window.preloadMedia()
- *   - window.updateTextMessage(originalHtml, translation)
- *   - window.loadScript(src)  → Promise
  * -------------------------------------------------------
  */
 
