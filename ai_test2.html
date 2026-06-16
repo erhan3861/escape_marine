@@ -1,0 +1,330 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="light only">
+    <meta name="robots" content="noindex, nofollow, noimageindex">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Dynamic Base Tag Injector for local/production fallback -->
+    <script src="static/js/base-injector.js"></script>
+
+    <link href="css/gf_SchibstedGrotesk.css" rel="stylesheet">
+    <link href="css/view.0.0.87.css" rel="stylesheet">
+    <title>Submarine Escape Game</title>
+    <link href="css/main.105fc96e.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/gf_Viga.css" media="all">
+    <link rel="stylesheet" href="css/gf_Barriecito.css" media="all">
+    <link rel="stylesheet" href="css/gf_Sora.css" media="all">
+    <link rel="stylesheet" href="css/gf_SourceSansPro.css" media="all">
+    <link rel="stylesheet" href="css/gf_SchibstedGrotesk.css" media="all">
+    <link rel="stylesheet" href="css/gf_OpenSans.css" media="all">
+    <link rel="stylesheet" href="css/gf_Inter.css" media="all">
+    <link rel="stylesheet" href="css/gf_DMSans.css" media="all">
+    <style>
+        body,
+        html {
+            padding: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="static/js/offline.js" type="text/javascript"></script>
+
+    <script>
+        window.gameObject = {
+
+            // ── KARŞILAMA EKRANI ────────────────────────────────────────────────
+            // WELCOME_HEADER  : Oyun başlık metni (ders/konu adı, kısa ve çarpıcı)
+            // WELCOME_TITLE   : Alt başlık ya da giriş cümlesi
+            // WELCOME_START_BTN: Başlat butonu etiketi
+            "WELCOME_HEADER": "Elektriğin İletimi ve Direnç",
+            "WELCOME_TITLE": "Denizaltının ışıklarını çalıştırmak için devreleri çöz!",
+            "WELCOME_START_BTN": "Göreve Başla",
+
+            // ── GİRİŞ SLAYTΙ ────────────────────────────────────────────────────
+            // INTRO_HEADER : Merak uyandıran kısa başlık
+            // INTRO_TEXT   : 2-3 cümle. Öğrenciyi konuya çeken, denizaltı
+            //                senaryosunu konuyla ilişkilendiren hikaye metni.
+            "INTRO_HEADER": "Derinlerde Elektrik Krizi",
+            "INTRO_TEXT": "Denizaltı aniden karanlıkta kaldı ve kontrol paneli çalışmıyor. Hangi maddelerin elektriği ilettiğini bulup doğru devreyi kurarsan ampuller yanacak. Sonra parlaklığı etkileyen değişkenleri ve ayarlı direnci kullanarak enerjiyi güvenle ayarlayıp yüzeye çıkabileceksin!",
+
+            // ── BÖLÜM MENÜSÜ ────────────────────────────────────────────────────
+            // Her bölüm ismi: konunun bir alt başlığı / teması (max 4 kelime)
+            "LEVEL_1_NAME": "İletken ve Yalıtkan",
+            "LEVEL_2_NAME": "Parlaklık Değişkenleri",
+            "LEVEL_3_NAME": "Direnç ve Reosta",
+            "LEVEL_4_NAME": "Deney Tasarla",
+            "LEVEL_5_NAME": "Son Görev: Kaçış",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 1
+            // STAGE_TITLE : Kısa bölüm başlığı
+            // STAGE_DESC  : 1-2 cümle motivasyon metni
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_1_TITLE": "İletimi Keşfet",
+            "STAGE_1_DESC": "Kontrol panelindeki kabloları yenilemek için hangi maddelerin elektriği ilettiğini bilmelisin. Basit bir devre düşünerek iletken ve yalıtkanları ayırt et!",
+
+            // ── STANDART SORULAR (Bölüm 1) ──────────────────────────────────────
+            // QUESTION_1 → 2 şık (Doğru/Yanlış tipi)
+            //   isCorrect: true olan şık CEVAP, false olan YANLIŞ şık
+            "QUESTION_1": {
+                "text": "Metaller genellikle elektriği ileten maddelerdir.",
+                "answers": [
+                    { "text": "Doğru", "isCorrect": true },
+                    { "text": "Yanlış", "isCorrect": false }
+                ]
+            },
+
+            // QUESTION_2 → 3 şık
+            "QUESTION_2": {
+                "text": "Bir maddenin elektriği iletip iletmediğini anlamak için en uygun yöntem hangisidir?",
+                "answers": [
+                    { "text": "Basit devre kurup maddeyi devreye bağlayarak denemek", "isCorrect": true },
+                    { "text": "Maddenin rengine bakıp karar vermek", "isCorrect": false },
+                    { "text": "Maddenin kokusunu kontrol etmek", "isCorrect": false }
+                ]
+            },
+
+            // QUESTION_3 → 4 şık
+            "QUESTION_3": {
+                "text": "Aşağıdakilerden hangisi elektriği iletmez (yalıtkan) bir maddedir?",
+                "answers": [
+                    { "text": "Demir kaşık", "isCorrect": false },
+                    { "text": "Alüminyum folyo", "isCorrect": false },
+                    { "text": "Bakır tel", "isCorrect": false },
+                    { "text": "Plastik cetvel", "isCorrect": true }
+                ]
+            },
+
+            // QUESTION_4 → 2 şık (Doğru/Yanlış tipi)
+            "QUESTION_4": {
+                "text": "Islak ellerle elektrik prizine dokunmak çok tehlikelidir.",
+                "answers": [
+                    { "text": "Doğru", "isCorrect": true },
+                    { "text": "Yanlış", "isCorrect": false }
+                ]
+            },
+
+            // ── STANDART SORULAR (Bölüm 2) ──────────────────────────────────────
+            // QUESTION_5..8 → her biri 3 şık
+            "QUESTION_5": {
+                "text": "Aynı devrede pil sayısı artırılırsa ampulün parlaklığı nasıl değişir?",
+                "answers": [
+                    { "text": "Artar", "isCorrect": true },
+                    { "text": "Azalır", "isCorrect": false },
+                    { "text": "Kesinlikle değişmez", "isCorrect": false }
+                ]
+            },
+            "QUESTION_6": {
+                "text": "Bir devreye aynı türden bir ampul daha seri bağlanırsa ampullerin parlaklığı genellikle nasıl değişir?",
+                "answers": [
+                    { "text": "Azalır", "isCorrect": true },
+                    { "text": "Artar", "isCorrect": false },
+                    { "text": "Yalnızca renk değişir", "isCorrect": false }
+                ]
+            },
+            "QUESTION_7": {
+                "text": "Devrede daha uzun ve daha ince kablo kullanmak (aynı pil ve ampulde) ampul parlaklığını nasıl etkiler?",
+                "answers": [
+                    { "text": "Azaltır", "isCorrect": true },
+                    { "text": "Artırır", "isCorrect": false },
+                    { "text": "Ampulün rengini mavi yapar", "isCorrect": false }
+                ]
+            },
+            "QUESTION_8": {
+                "text": "İki ampul paralel bağlandığında, her bir ampulün parlaklığı tek ampullü devreye göre genellikle nasıldır?",
+                "answers": [
+                    { "text": "Yaklaşık aynı kalır", "isCorrect": true },
+                    { "text": "Her biri kesinlikle yarıya düşer", "isCorrect": false },
+                    { "text": "Hiçbiri yanmaz", "isCorrect": false }
+                ]
+            },
+
+            // ── STANDART SORULAR (Bölüm 3 & 5) ─────────────────────────────────
+            // QUESTION_9..12 → her biri 3 şık
+            "QUESTION_9": {
+                "text": "Ayarlanabilir direnç (reosta) ile devredeki direnç artırılırsa ampulün parlaklığı nasıl değişir?",
+                "answers": [
+                    { "text": "Artar", "isCorrect": false },
+                    { "text": "Değişmez", "isCorrect": false },
+                    { "text": "Azalır", "isCorrect": true }
+                ]
+            },
+            "QUESTION_10": {
+                "text": "Direncin birimi aşağıdakilerden hangisidir?",
+                "answers": [
+                    { "text": "Volt (V)", "isCorrect": false },
+                    { "text": "Ohm (Ω)", "isCorrect": true },
+                    { "text": "Amper (A)", "isCorrect": false }
+                ]
+            },
+            "QUESTION_11": {
+                "text": "Ampul parlaklığını karşılaştırmaya yönelik bir deneyde, adil karşılaştırma için hangisi sabit tutulmalıdır?",
+                "answers": [
+                    { "text": "Kullanılan ampulün türü", "isCorrect": true },
+                    { "text": "Her denemede kabloyu farklı seçmek", "isCorrect": false },
+                    { "text": "Her denemede pili farklı markadan seçmek", "isCorrect": false }
+                ]
+            },
+            "QUESTION_12": {
+                "text": "Reostanın sürgüsü, devrede kullanılan tel uzunluğunu artıracak şekilde hareket ettirilirse direnç nasıl değişir?",
+                "answers": [
+                    { "text": "Azalır", "isCorrect": false },
+                    { "text": "Sıfırlanır", "isCorrect": false },
+                    { "text": "Artar", "isCorrect": true }
+                ]
+            },
+
+            // ══════════════════════════════════════════════════════════════════
+            // GÖRSEL SORULAR — IMAGE_Q
+            //
+            // IMAGE_Q1..Q4 → 5 şıklı görsel çoktan seçmeli (CHOICE_A..E)
+            //   HEADER    : Kısa başlık (max 6 kelime)
+            //   BODY      : Sorunun tam metni
+            //   CHOICE_*  : Şık metinleri — doğru şık yorum satırında belirtilmiş
+            //   DRAG_TEXT : Sürüklenecek etiket (sadece IMAGE_Q1'de, max 4 kelime)
+            //
+            // IMAGE_Q5..Q8 → sadece HEADER + BODY (şık yok, görsel eşleştirme)
+            //   Motor görseli otomatik eşleştirir; sadece soru metni gerekli.
+            // ══════════════════════════════════════════════════════════════════
+
+            // IMAGE_Q1 — doğru şık: CHOICE_C
+            "IMAGE_Q1_HEADER": "İletkeni Seç",
+            "IMAGE_Q1_BODY": "Görseldeki maddelerden hangisini devreye bağlarsan ampul yanar?",
+            "IMAGE_Q1_CHOICE_A": "Cam çubuk",
+            "IMAGE_Q1_CHOICE_B": "Tahta parça",
+            "IMAGE_Q1_CHOICE_C": "Bakır tel",
+            "IMAGE_Q1_CHOICE_D": "Plastik kapak",
+            "IMAGE_Q1_CHOICE_E": "Lastik bant",
+            "IMAGE_Q1_DRAG_TEXT": "Bakır tel",
+
+            // IMAGE_Q2 — doğru şık: CHOICE_B
+            "IMAGE_Q2_HEADER": "Parlaklık Artışı",
+            "IMAGE_Q2_BODY": "Görselde iki devre karşılaştırılıyor. İkinci devrede ampul daha parlaktır. Hangi değişiklik bu sonucu açıklayabilir?",
+            "IMAGE_Q2_CHOICE_A": "Kablo daha uzun yapılmış",
+            "IMAGE_Q2_CHOICE_B": "Pil sayısı artırılmış",
+            "IMAGE_Q2_CHOICE_C": "Bir ampul seri eklenmiş",
+            "IMAGE_Q2_CHOICE_D": "Devreye yalıtkan eklenmiş",
+            "IMAGE_Q2_CHOICE_E": "Reosta direnci artırılmış",
+
+            // IMAGE_Q3 — doğru şık: CHOICE_A
+            "IMAGE_Q3_HEADER": "Bağlantı Türü",
+            "IMAGE_Q3_BODY": "Görselde iki ampulün aynı yol üzerinde art arda bağlandığı devre görülüyor. Bu bağlantı hangisidir?",
+            "IMAGE_Q3_CHOICE_A": "Seri bağlama",
+            "IMAGE_Q3_CHOICE_B": "Paralel bağlama",
+            "IMAGE_Q3_CHOICE_C": "Açık devre",
+            "IMAGE_Q3_CHOICE_D": "Kısa devre",
+            "IMAGE_Q3_CHOICE_E": "Topraklama",
+
+            // IMAGE_Q4 — doğru şık: CHOICE_D
+            "IMAGE_Q4_HEADER": "Ayarlı Direnç",
+            "IMAGE_Q4_BODY": "Görselde sürgülü bir direnç elemanı/simgesi var. Bu devre elemanının adı nedir?",
+            "IMAGE_Q4_CHOICE_A": "Anahtar",
+            "IMAGE_Q4_CHOICE_B": "Sigorta",
+            "IMAGE_Q4_CHOICE_C": "Ampul",
+            "IMAGE_Q4_CHOICE_D": "Ayarlı direnç (reosta)",
+            "IMAGE_Q4_CHOICE_E": "Pil yatağı",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 2
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_2_TITLE": "Ampul Neden Parlar?",
+            "STAGE_2_DESC": "Sinyal ışıklarını güçlendirmek için ampulün parlaklığını etkileyen değişkenleri bulmalısın. Pil sayısı, kablo ve bağlantı şekli gibi etkenleri gözlemleyerek karar ver!",
+
+            // IMAGE_Q5..Q8 — sadece başlık + soru metni (şık YOK)
+            "IMAGE_Q5_HEADER": "İletken mi Yalıtkan mı",
+            "IMAGE_Q5_BODY": "Görseldeki nesneyi, elektriği ileten mi yoksa yalıtan mı olduğuna göre uygun gruba eşleştir.",
+            "IMAGE_Q6_HEADER": "Pil Sayısını Eşleştir",
+            "IMAGE_Q6_BODY": "Görseldeki devrelerde pil sayısına göre ampul parlaklığını (daha parlak/daha sönük) uygun ifadeyle eşleştir.",
+            "IMAGE_Q7_HEADER": "Seri mi Paralel mi",
+            "IMAGE_Q7_BODY": "Görseldeki ampul bağlantılarını seri veya paralel olarak doğru şekilde eşleştir.",
+            "IMAGE_Q8_HEADER": "Reosta Etkisi",
+            "IMAGE_Q8_BODY": "Görselde reostanın konumuna göre ampulün parlaklığının artıp azalmasını uygun ifadeyle eşleştir.",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 3
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_3_TITLE": "Dirençle Ayarla",
+            "STAGE_3_DESC": "Denizaltının ışık şiddeti çok artarsa sistem ısınabilir. Ayarlanabilir direnç kullanarak akımı kontrol et ve parlaklığı güvenli seviyeye getir!",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 4
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_4_TITLE": "Deney Tasarla",
+            "STAGE_4_DESC": "Artık gözlem yapmayı biliyorsun. Şimdi kavramları doğru eşleştirerek iletkenlik ve dirençle ilgili çıkarımlarını güçlendir!",
+
+            // ── SÜRÜKLE-EŞLEŞTİR 1 ─────────────────────────────────────────────
+            // MATCH_1_HEADER : Aktivite yönergesi (max 8 kelime)
+            // (Bu aktivitede item metinleri motor tarafından data.json'dan gelir;
+            //  burada sadece başlık yazılır.)
+            "MATCH_1_HEADER": "İletken ve yalıtkanı eşleştir",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 5
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_5_TITLE": "Final Kilidi",
+            "STAGE_5_DESC": "Çıkış kapısı yalnızca doğru bilimsel çıkarımla açılıyor. Kavramları açıklamalarıyla eşleştir ve denizaltıyı yüzeye çıkar!",
+
+            // ── SÜRÜKLE-EŞLEŞTİR 2 ─────────────────────────────────────────────
+            // MATCH_2_HEADER  : Aktivite yönergesi (max 8 kelime)
+            // MATCH_2_ITEM_*  : Eşleştirilecek 3 kavram (her biri max 5 kelime)
+            "MATCH_2_HEADER": "Kavramı açıklamasıyla eşleştir",
+            "MATCH_2_ITEM_1": "İletken",
+            "MATCH_2_ITEM_2": "Yalıtkan",
+            "MATCH_2_ITEM_3": "Direnç",
+
+            // ── SÜRÜKLE-EŞLEŞTİR 3 ─────────────────────────────────────────────
+            "MATCH_3_ITEM_1": "Kolay elektrik geçirir",
+            "MATCH_3_ITEM_2": "Elektrik geçirmez",
+            "MATCH_3_ITEM_3": "Akımı zorlaştırır",
+
+            // ══════════════════════════════════════════════════════════════════
+            // FİNALE EKRANLARI
+            // FINALE_STORY_1   : Tebrik + konu özeti (2-3 cümle, coşkulu)
+            // FINALE_CHOOSE_CHEST: Sandık seçim yönergesi
+            // CHEST_*_TEXT/TITLE: Her sandık için farklı ödül/motivasyon mesajı
+            // ══════════════════════════════════════════════════════════════════
+            "FINALE_STORY_1": "Tebrikler! Hangi maddelerin elektriği ilettiğini deney mantığıyla belirledin ve ampul parlaklığını etkileyen değişkenleri doğru yorumladın. Reosta ile direnci ayarlayarak akımı kontrol ettin ve denizaltının enerji sistemi yeniden çalıştı!",
+            "FINALE_CHOOSE_CHEST": "Ödül sandığını seç ve görevi tamamla.",
+
+            "CHEST_1_TEXT": "Bilim Rozeti kazandın! Artık iletken ve yalıtkanları devrede güvenle seçebilirsin.",
+            "CHEST_1_TITLE": "Bilim Rozeti",
+
+            "CHEST_2_TEXT": "Mühendis Notu: Parlaklığı karşılaştırırken tek bir değişkeni değiştir, diğerlerini sabit tut!",
+
+            "CHEST_3_TEXT": "Usta Teknisyen ödülü! Reosta ile direnç artarsa parlaklığın azaldığını unutma.",
+            "CHEST_3_TITLE": "Usta Teknisyen"
+        };
+    </script>
+
+    <!-- ========================================== -->
+    <!-- EXTERNAL ENGINE SCRIPTS                   -->
+    <!-- ========================================== -->
+    <script src="static/js/media-preloads.js"></script>
+    <script src="static/js/game-engine-utils.js"></script>
+    <script src="static/js/game-init.js"></script>
+
+    <input type="hidden" id="offline-6a1d323253aa85d97924e633" value="true">
+    <div class="iframe-container">
+        <div class="container-wrapper-genially" style="position: relative; min-height: 400px; width: 100%;"><video
+                class="loader-genially" autoplay="" loop="" playsinline="playsInline" muted=""
+                style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 120px;height: 120px;margin-bottom: 10%">
+                <source src="videos/loader-edu.mp4" type="video/mp4">Your browser does not support the video tag.
+            </video>
+            <div id="6a1d323253aa85d97924e633" class="genially-embed"
+                style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+```

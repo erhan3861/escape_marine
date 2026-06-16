@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="light only">
+    <meta name="robots" content="noindex, nofollow, noimageindex">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="static/js/base-injector.js"></script>
+
+    <link href="css/gf_SchibstedGrotesk.css" rel="stylesheet">
+    <link href="css/view.0.0.87.css" rel="stylesheet">
+    <title>Submarine Escape Game</title>
+    <link href="css/main.105fc96e.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/gf_Viga.css" media="all">
+    <link rel="stylesheet" href="css/gf_Barriecito.css" media="all">
+    <link rel="stylesheet" href="css/gf_Sora.css" media="all">
+    <link rel="stylesheet" href="css/gf_SourceSansPro.css" media="all">
+    <link rel="stylesheet" href="css/gf_SchibstedGrotesk.css" media="all">
+    <link rel="stylesheet" href="css/gf_OpenSans.css" media="all">
+    <link rel="stylesheet" href="css/gf_Inter.css" media="all">
+    <link rel="stylesheet" href="css/gf_DMSans.css" media="all">
+    <style>
+        body,
+        html {
+            padding: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="static/js/offline.js" type="text/javascript"></script>
+
+    <script>
+        window.gameObject = {
+
+            // ── KARŞILAMA EKRANI ────────────────────────────────────────────────
+            "WELCOME_HEADER": "Güneş Sistemi Yolcusu",
+            "WELCOME_TITLE": "Uzayın derinliklerinde bir maceraya hazır mısın?",
+            "WELCOME_START_BTN": "Yolculuğu Başlat",
+
+            // ── GİRİŞ SLAYTΙ ────────────────────────────────────────────────────
+            "INTRO_HEADER": "Görev: Gezegenleri Keşfet",
+            "INTRO_TEXT": "Denizaltımızla uzay boşluğunda ilerliyoruz! Gezegenler hakkında bildiklerini kullanarak rotamızı belirlemeli ve güvenli bir şekilde üsse dönmeliyiz. Hazırsan motorları çalıştır!",
+
+            // ── BÖLÜM MENÜSÜ ────────────────────────────────────────────────────
+            "LEVEL_1_NAME": "İç Gezegenler",
+            "LEVEL_2_NAME": "Dış Gezegenler",
+            "LEVEL_3_NAME": "Gök Cisimleri",
+            "LEVEL_4_NAME": "Uzay Kuralları",
+            "LEVEL_5_NAME": "Büyük Final",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 1
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_1_TITLE": "İç Gezegenler",
+            "STAGE_1_DESC": "Güneş'e en yakın dört gezegeni tanıyalım.",
+
+            // ── STANDART SORULAR (Bölüm 1) ──────────────────────────────────────
+            "QUESTION_1": {
+                "text": "Güneş sistemindeki Güneş'e en yakın gezegen hangisidir?",
+                "answers": [
+                    { "text": "Merkür", "isCorrect": true },
+                    { "text": "Dünya", "isCorrect": false }
+                ]
+            },
+
+            "QUESTION_2": {
+                "text": "Hangisi bir iç gezegen değildir?",
+                "answers": [
+                    { "text": "Jüpiter", "isCorrect": true },
+                    { "text": "Venüs", "isCorrect": false },
+                    { "text": "Mars", "isCorrect": false }
+                ]
+            },
+
+            "QUESTION_3": {
+                "text": "Dünya'nın 'ikizi' olarak adlandırılan gezegen hangisidir?",
+                "answers": [
+                    { "text": "Mars", "isCorrect": false },
+                    { "text": "Merkür", "isCorrect": false },
+                    { "text": "Neptün", "isCorrect": false },
+                    { "text": "Venüs", "isCorrect": true }
+                ]
+            },
+
+            "QUESTION_4": {
+                "text": "Mars, yüzeyindeki demir oksit nedeniyle kızıl görünür.",
+                "answers": [
+                    { "text": "Doğru", "isCorrect": true },
+                    { "text": "Yanlış", "isCorrect": false }
+                ]
+            },
+
+            // ── STANDART SORULAR (Bölüm 2) ──────────────────────────────────────
+            "QUESTION_5": {
+                "text": "Güneş sisteminin en büyük gezegeni hangisidir?",
+                "answers": [
+                    { "text": "Jüpiter", "isCorrect": true },
+                    { "text": "Satürn", "isCorrect": false },
+                    { "text": "Uranüs", "isCorrect": false }
+                ]
+            },
+            "QUESTION_6": {
+                "text": "Etrafında belirgin halkaları olan gezegen hangisidir?",
+                "answers": [
+                    { "text": "Satürn", "isCorrect": true },
+                    { "text": "Mars", "isCorrect": false },
+                    { "text": "Venüs", "isCorrect": false }
+                ]
+            },
+            "QUESTION_7": {
+                "text": "Hangisi bir gaz devidir?",
+                "answers": [
+                    { "text": "Neptün", "isCorrect": true },
+                    { "text": "Dünya", "isCorrect": false },
+                    { "text": "Merkür", "isCorrect": false }
+                ]
+            },
+            "QUESTION_8": {
+                "text": "Güneş'ten en uzak gezegen hangisidir?",
+                "answers": [
+                    { "text": "Neptün", "isCorrect": true },
+                    { "text": "Satürn", "isCorrect": false },
+                    { "text": "Jüpiter", "isCorrect": false }
+                ]
+            },
+
+            // ── STANDART SORULAR (Bölüm 3 & 5) ─────────────────────────────────
+            "QUESTION_9": {
+                "text": "Dünya'nın doğal uydusu hangisidir?",
+                "answers": [
+                    { "text": "Güneş", "isCorrect": false },
+                    { "text": "Mars", "isCorrect": false },
+                    { "text": "Ay", "isCorrect": true }
+                ]
+            },
+            "QUESTION_10": {
+                "text": "Güneş sisteminin merkezinde ne bulunur?",
+                "answers": [
+                    { "text": "Dünya", "isCorrect": false },
+                    { "text": "Güneş", "isCorrect": true },
+                    { "text": "Ay", "isCorrect": false }
+                ]
+            },
+            "QUESTION_11": {
+                "text": "Kuyruklu yıldızlar nelerden oluşur?",
+                "answers": [
+                    { "text": "Buz ve toz", "isCorrect": true },
+                    { "text": "Sadece gaz", "isCorrect": false },
+                    { "text": "Sadece kaya", "isCorrect": false }
+                ]
+            },
+            "QUESTION_12": {
+                "text": "Asteroidler çoğunlukla nerede bulunur?",
+                "answers": [
+                    { "text": "Güneş'in çok yakınında", "isCorrect": false },
+                    { "text": "Dünya'nın atmosferinde", "isCorrect": false },
+                    { "text": "Mars ve Jüpiter arasında", "isCorrect": true }
+                ]
+            },
+
+            // ══════════════════════════════════════════════════════════════════
+            // GÖRSEL SORULAR — IMAGE_Q
+            // ══════════════════════════════════════════════════════════════════
+
+            "IMAGE_Q1_HEADER": "Gezegen Sıralaması",
+            "IMAGE_Q1_BODY": "Güneş'ten uzaklık sırasına göre 3. gezegen hangisidir?",
+            "IMAGE_Q1_CHOICE_A": "Venüs",
+            "IMAGE_Q1_CHOICE_B": "Mars",
+            "IMAGE_Q1_CHOICE_C": "Dünya",
+            "IMAGE_Q1_CHOICE_D": "Merkür",
+            "IMAGE_Q1_CHOICE_E": "Satürn",
+            "IMAGE_Q1_DRAG_TEXT": "Gezegenleri yerleştir",
+
+            "IMAGE_Q2_HEADER": "Uydular",
+            "IMAGE_Q2_BODY": "Bu hangi gök cismidir?",
+            "IMAGE_Q2_CHOICE_A": "Güneş",
+            "IMAGE_Q2_CHOICE_B": "Ay",
+            "IMAGE_Q2_CHOICE_C": "Mars",
+            "IMAGE_Q2_CHOICE_D": "Dünya",
+            "IMAGE_Q2_CHOICE_E": "Satürn",
+
+            "IMAGE_Q3_HEADER": "Güneş",
+            "IMAGE_Q3_BODY": "Güneş nedir?",
+            "IMAGE_Q3_CHOICE_A": "Bir yıldız",
+            "IMAGE_Q3_CHOICE_B": "Bir gezegen",
+            "IMAGE_Q3_CHOICE_C": "Bir uydu",
+            "IMAGE_Q3_CHOICE_D": "Bir asteroid",
+            "IMAGE_Q3_CHOICE_E": "Bir galaksi",
+
+            "IMAGE_Q4_HEADER": "Kuyruklu Yıldız",
+            "IMAGE_Q4_BODY": "Kuyruklu yıldızların kuyruğu neden oluşur?",
+            "IMAGE_Q4_CHOICE_A": "Tozdan",
+            "IMAGE_Q4_CHOICE_B": "Gazdan",
+            "IMAGE_Q4_CHOICE_C": "Sudan",
+            "IMAGE_Q4_CHOICE_D": "Buz ve toz",
+            "IMAGE_Q4_CHOICE_E": "Kayadan",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 2
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_2_TITLE": "Gezegenleri Tanı",
+            "STAGE_2_DESC": "Görsellere bak ve doğru ismi eşleştir.",
+
+            "IMAGE_Q5_HEADER": "Jüpiter",
+            "IMAGE_Q5_BODY": "Devasa gaz kütlesi.",
+            "IMAGE_Q6_HEADER": "Satürn",
+            "IMAGE_Q6_BODY": "Halkalı gezegen.",
+            "IMAGE_Q7_HEADER": "Dünya",
+            "IMAGE_Q7_BODY": "Yaşam olan gezegen.",
+            "IMAGE_Q8_HEADER": "Merkür",
+            "IMAGE_Q8_BODY": "En yakın gezegen.",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 3
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_3_TITLE": "Gök Cisimleri",
+            "STAGE_3_DESC": "Uzaydaki diğer nesneleri keşfediyoruz.",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 4
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_4_TITLE": "Uzay Bilgisi",
+            "STAGE_4_DESC": "Kavramları doğru yerlere sürükle.",
+
+            "MATCH_1_HEADER": "Kavramları doğru gruplara yerleştir.",
+
+            // ══════════════════════════════════════════════════════════════════
+            // BÖLÜM 5
+            // ══════════════════════════════════════════════════════════════════
+            "STAGE_5_TITLE": "Büyük Final",
+            "STAGE_5_DESC": "Tüm görevleri tamamladın, tebrikler!",
+
+            "MATCH_2_HEADER": "Gezegen türlerini eşleştir.",
+            "MATCH_2_ITEM_1": "İç: Merkür",
+            "MATCH_2_ITEM_2": "Dış: Jüpiter",
+            "MATCH_2_ITEM_3": "Cüce: Plüton",
+
+            "MATCH_3_ITEM_1": "Yıldız: Güneş",
+            "MATCH_3_ITEM_2": "Uydu: Ay",
+            "MATCH_3_ITEM_3": "Gezegen: Mars",
+
+            // ══════════════════════════════════════════════════════════════════
+            // FİNALE EKRANLARI
+            // ══════════════════════════════════════════════════════════════════
+            "FINALE_STORY_1": "Harika iş çıkardın! Güneş sistemini başarıyla geçtin ve üsse ulaştın. Bilgin sayesinde uzay yolculuğumuz başarıyla sonuçlandı.",
+            "FINALE_CHOOSE_CHEST": "Bir ödül sandığı seç!",
+
+            "CHEST_1_TEXT": "Uzay kaşifi rozeti kazandın!",
+            "CHEST_1_TITLE": "Tebrikler!",
+
+            "CHEST_2_TEXT": "Yıldız gözlemcisi unvanı kazandın!",
+
+            "CHEST_3_TEXT": "Gezegen uzmanı sertifikası kazandın!",
+            "CHEST_3_TITLE": "Harika!"
+        };
+    </script>
+
+    <script src="static/js/media-preloads.js"></script>
+    <script src="static/js/game-engine-utils.js"></script>
+    <script src="static/js/game-init.js"></script>
+
+    <input type="hidden" id="offline-6a1d323253aa85d97924e633" value="true">
+    <div class="iframe-container">
+        <div class="container-wrapper-genially" style="position: relative; min-height: 400px; width: 100%;"><video
+                class="loader-genially" autoplay="" loop="" playsinline="playsInline" muted=""
+                style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 120px;height: 120px;margin-bottom: 10%">
+                <source src="videos/loader-edu.mp4" type="video/mp4">Your browser does not support the video tag.
+            </video>
+            <div id="6a1d323253aa85d97924e633" class="genially-embed"
+                style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
