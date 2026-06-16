@@ -25,14 +25,9 @@ function preloadMedia() {
         }, index * 50); // Stagger audio requests by 50ms
       });
     }
-    if (typeof imagePreloads !== 'undefined') {
-      imagePreloads.forEach((src, index) => {
-        setTimeout(() => {
-          const img = new Image();
-          img.src = src;
-        }, index * 20); // Stagger image requests by 20ms
-      });
-    }
+    // GÖRSELLERİN ÖN YÜKLEMESİ KALDIRILDI:
+    // Genially motoru görselleri slayt geçişlerinde dinamik olarak zaten yüklemektedir.
+    // Başlangıçta 150+ görseli yüklemek ağ trafiğini tıkamakta ve ERR_HTTP2_PROTOCOL_ERROR hatalarına yol açmaktadır.
   };
 
   if (typeof window.requestIdleCallback !== 'undefined') {
